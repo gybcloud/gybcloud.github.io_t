@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>VIP电影免费看</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/nav.css" />
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
 		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 		<style type="text/css">
@@ -18,54 +19,51 @@
 		</style>
 	</head>
 	<body class="bg-info">
-		<nav class="navbar navbar-inverse" style="margin: 0;padding: 0;border-radius: 0;">
-		 	 <div class="container-fluid">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-	    	 		<img class="navbar-brand" src="img/logo.jpg" />
-	      			<a class="navbar-brand"  href="#">电影免费看</a>
-			    </div>
-			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      <ul class="nav navbar-nav">
-			        <li class="active"><a href="http://vip.iqiyi.com/?fc=b4df9faa4b31aec4" target="_blank">爱奇艺VIP<span class="sr-only">(current)</span></a></li>
+		<div class="nav-custom">
+		    <div class="navc-header">
+      			<a href="#"><img  src="img/logo.jpg" />电影免费看</a>
+		    </div>
+		    <div>
+		      	<ul>
+			        <li><a class="active-c" href="http://vip.iqiyi.com/?fc=b4df9faa4b31aec4" target="_blank">爱奇艺VIP<span class="sr-only">(current)</span></a></li>
 			        <li><a href="http://film.qq.com/x/2017/" target="_blank">腾讯视频VIP</a></li>
 			        <li><a href="http://vip.youku.com/" target="_blank">优酷VIP</a></li>
 			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多VIP链接<span class="caret"></span></a>
-			          <ul class="dropdown-menu">
-			            <li><a href="https://film.sohu.com/vip.html" target="_blank">搜狐视频VIP</a></li>
-			           	<li><a href="http://vip.le.com/" target="_blank">乐视VIP</a></li>
-			           	<li><a href="http://vip.pptv.com/" target="_blank">PPTV聚力VIP</a></li>
-			           	<li><a href="http://vip.baofeng.com/" target="_blank">暴风影音VIP</a></li>
-			            <li><a href="http://movie.ku6.com/" target="_blank">酷6网VIP</a></li>
-			            <li role="separator" class="divider"></li>
-			            <li><a href="http://new.tudou.com/" target="_blank">土豆</a></li>
-			            <li><a href="http://video.sina.com.cn/" target="_blank">新浪视频</a></li>
-			            <li><a href="http://www.56.com/movie" target="_blank">我乐网</a></li>
-			            <li><a href="https://www.bilibili.com/index.html" target="_blank">哔哩哔哩</a></li>
-			          </ul>
+			          	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多VIP链接<span class="caret"></span></a>
+				        <ul class="dropdown-menu">
+				            <li><a href="https://film.sohu.com/vip.html" target="_blank">搜狐视频VIP</a></li>
+				           	<li><a href="http://vip.le.com/" target="_blank">乐视VIP</a></li>
+				           	<li><a href="http://vip.pptv.com/" target="_blank">PPTV聚力VIP</a></li>
+				           	<li><a href="http://vip.baofeng.com/" target="_blank">暴风影音VIP</a></li>
+				            <li><a href="http://movie.ku6.com/" target="_blank">酷6网VIP</a></li>
+				            <li role="separator" class="divider"></li>
+				            <li><a href="http://new.tudou.com/" target="_blank">土豆</a></li>
+				            <li><a href="http://video.sina.com.cn/" target="_blank">新浪视频</a></li>
+				            <li><a href="http://www.56.com/movie" target="_blank">我乐网</a></li>
+				            <li><a href="https://www.bilibili.com/index.html" target="_blank">哔哩哔哩</a></li>
+			          	</ul>
 			        </li>
-			      </ul>
-			      <form action="so.html" class="navbar-form navbar-left" method="get" target="_blank">
-			        <div class="form-group">
-			          <input name="keyword" type="text" class="form-control" placeholder="VIP 电影搜索">
-			        </div>
-			        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search">搜索</span></button>
-			      </form>
-			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="help.html">帮助中心</a></li>
-			        <li class="dropdown">
+		    	</ul>
+		    </div>
+	    	<div>
+	    		<ul>
+	    			<li style="padding-top:5px"><input id="keyword" name="keyword" type="text" class="form-control" placeholder="VIP 电影搜索" /></li>
+			   		<li><button id="so-btn" class="btn btn-primary"><span class="glyphicon glyphicon-search">搜索</span></button></li>
+	      		</ul>
+			</div>
+	      	<div class="float-rigth">
+		      	<ul>
+		      		<li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">赞助我<span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-			            <li><a href="img/sponsor/alipay.jpg" target="_blank"><img src="img/sponsor/alipay.jpg" style="width: 155px;height: 150px;"/></a></li>
-			            <li><a href="img/sponsor/weixinpay.png" target="_blank"><img src="img/sponsor/weixinpay.png" style="width:155px;height: 150px;"/></a></li>
+			            <li><a style="margin: 0;padding: 0;" href="img/sponsor/alipay.jpg" target="_blank"><img src="img/sponsor/alipay.jpg" style="width: 155px;height: 150px;"/></a></li>
+			            <li><a style="margin: 0;padding: 0;" href="img/sponsor/weixinpay.png" target="_blank"><img src="img/sponsor/weixinpay.png" style="width:155px;height: 150px;"/></a></li>
 			          </ul>
 			        </li>
-			      </ul>
-		    	</div><!-- /.navbar-collapse -->
-		 	 </div><!-- /.container-fluid -->
-		</nav>
+			        <li><a href="help.html">帮助中心</a></li>
+			    </ul>
+		    </div>
+		</div><!-- /.container-fluid -->
 		<div class="div_center">
 			<iframe src="help.html" scrolling="no"></iframe>
 			<div class="ctrl">

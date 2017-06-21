@@ -1,0 +1,12 @@
+.nav-custom{ background: black;color: white;height: 45px;padding:0 15px;}
+.nav-custom > div{float: left;height: 45px; line-height: 45px;display:inline}
+.navc-header > a > img{height:40px;float: left; }
+.navc-header > a{line-height: 45px;font-size: 20px;font-family: "微软雅黑";color:white;text-decoration: none;}
+.nav-custom > div > ul >li{float: left;padding: 0 10px;list-style: none;}
+.nav-custom > div > ul > li > a{text-decoration: none;font: "微软雅黑";color:#c7c6c6;}
+.nav-custom > div > ul > li > a:hover{ color:white;}
+.active-c{ color:white !important;}
+.float-rigth{ float: right !important;}
+@media only screen and (max-width: 1136px){
+	.nav-custom{ width: 1136px;}
+}
