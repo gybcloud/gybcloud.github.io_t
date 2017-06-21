@@ -4,45 +4,8 @@
 		<meta charset="UTF-8">
 		<title>视频搜索</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script charset="UTF-8">
-			$(document).ready(function(){
-				var so_keyword = decodeURI(window.location.href.toString().split("keyword=")[1]);
-				var so_sugg_url = "http://suggest.video.iqiyi.com/?platform=11&rltnum=1&key=";
-				
-				$.get(so_sugg_url+so_keyword,function(data,status){
-					parseData(data);
-				});
-				
-			});
-			function parseData(data){
-				var data = JSON.parse(data);//转化为JSON对象
-				data = data.data;//获取数据部分
-				if(data.length==1){//如果数据数组为1，则有搜索结果
-					var datarel = data[0];//有效数据
-					var link = datarel.link; //视频连接
-					if(link==""){ //如果连接为空说明无法观看
-						document.write("No result!");
-					}else{//数据确实有效
-						//加载dom
-						showView(datarel.cid,datarel.cname,datarel.name,datarel.picture_url,datarel.link,datarel.director,datarel.main_actor,datarel.year);
-					}
-					
-					console.log(datarel);
-				}else{//否则无搜索结果
-					document.write("No result!")
-				}
-			}
-			function showView(cid,cname,name,pic_url,link,director,actor,year){
-				$("#v-pic").attr('src',pic_url);
-				$("#v-name").html(name);
-				$("#v-year").html(year);
-				$("#v-director").html(director.toString());
-				$("#v-actor").html(actor.toString());
-				$("#v-link").attr('href',"index.html?url="+link);
-			}
-		</script>
 	</head>
 	<body class="bg-info">
 		<nav class="navbar navbar-inverse" style="margin: 0;padding: 0;border-radius: 0;">
@@ -93,18 +56,27 @@
 		    	</div><!-- /.navbar-collapse -->
 		 	 </div><!-- /.container-fluid -->
 		</nav>
-		<div class="container" style="margin-top:40px;">
+		<div class="container" style="margin-top:40px;" id="v-container">
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-4">
 					<a id="v-link" href="javascript:void(0);"><img id="v-pic" src="" style="width: 180px;height: 235px;"/></a>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4" id="v-cont">
 					<p class="h5" style="color:red;"><span id="v-name"></span>&nbsp;<small id="v-year"></small></p>
+					<p><span style="color:#777777">地区：</span><span id="v-region"></span></p>
+					<p>
+						<span style="color:#777777">类型：</span><span id='v-cname'></span>&nbsp;&nbsp;
+						<span style="color:#777777">时长：</span><span id='v-duration'></span>
+					</p>
 					<p><span style="color:#777777">导演：</span><span id="v-director"></span></p>
 					<p><span style="color:#777777">主演：</span><span id="v-actor"></span></p>
+					<p id="v-updata"></p>
+					<p id="v-series"></p>
 				</div>
-				<div class="col-md-2"></div>
+				<div class="col-md-2">
+					
+				</div>
 			</div>
 		</div>
 	</body>

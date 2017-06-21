@@ -8,7 +8,6 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
 		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
-		<script type="text/javascript" src="js/video-so.js"></script>
 		<style type="text/css">
 			body{ margin: 0px;padding: 0px; }
 			iframe{ border:none;width: 700px;height: 400px; background: rgb(0,0,0);}
@@ -17,20 +16,6 @@
 			.ctrl > input{width: 230px;height: 33px;border:1px blue solid;border-radius: 3px;}
 			.ctrl > input[type='button']{ height: 33px;width: 100px;background: #489405;color:white ; }
 		</style>
-		<script>
-			$(document).ready(function(){
-				var arr = window.location.href.toString().split("url=");
-				if(arr.length==2){
-					console.log(arr[1]);
-					var url ="https://api.47ks.com/webcloud/?url="+arr[1];
-					$("iframe").attr("src",url);
-				}
-				$(".ctrl > input[type='button']").click(function(){
-					var url ="https://api.47ks.com/webcloud/?url="+$(".ctrl > input[type='text']").val();
-					$("iframe").attr("src",url);
-				});
-			});
-		</script>
 	</head>
 	<body class="bg-info">
 		<nav class="navbar navbar-inverse" style="margin: 0;padding: 0;border-radius: 0;">
